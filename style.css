@@ -1,0 +1,130 @@
+﻿/* Сброс стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Calibri, sans-serif; //calibri
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Стили для шапки */
+header {
+    background-color: blue; // Blue 
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Стили для навигации (Flexbox) */
+nav {
+    background-color: #333;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 10px 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Стили для контента (Grid) */
+.content {
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* Основной контент и боковая панель */
+    gap: 20px;
+    padding: 20px;
+    flex: 1;
+}
+
+.content .main {
+    padding: 20px;
+    background-color: gray;
+}
+
+.content .sidebar {
+    padding: 15px;
+    background-color: #f4f4f4;
+}
+
+/* Стили для подвала (Grid) */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.accordion {
+    margin-top: 20px;
+}
+
+.accordion-header {
+    width: 100%;
+    text-align: left;
+    padding: 15px;
+    font-size: 16px;
+    background: #eee;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.accordion-header:hover {
+    background: #ddd;
+}
+
+.accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    background: #fafafa;
+    transition: max-height 0.3s ease;
+    padding: 0 15px;
+}
+
+.accordion-body p {
+    margin: 10px 0;
+}
+
+/* При открытии */
+.accordion-item.active .accordion-body {
+    max-height: 200px;
+    padding: 10px 15px;
+}
+
+
+/* Медиазапросы для мобильных устройств */
+@media (max-width: 768px) {
+    /* Для контента: используем одну колонку */
+    .content {
+        grid-template-columns: 1fr; /* Все элементы в одну колонку */
+    }
+
+    nav ul {
+        flex-direction: column; /* Вертикальная навигация */
+        padding: 10px 0;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
